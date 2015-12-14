@@ -12,14 +12,16 @@ def nice(s):
         if b in s:
             return False
 
+    vows = 0
+    for v in vowels:
+        vows += s.count(v)
+    if vows < 3:
+        return False
+
     for i in xrange(97,123,1):
         if chr(i) + chr(i) in s:
-            vows = 0
-            for v in vowels:
-                vows += s.count(v)
-            if vows >= 3:
-                return True
-
+            return True
+            
     return False
 
 def part1(s):
