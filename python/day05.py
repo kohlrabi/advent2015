@@ -1,12 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import fileinput
-import md5
+import hashlib
 import math
 
 def nice(s):
     vowels = 'aeiou'
-    bad = ['ab', 'cd', 'pq', 'xy']
+    bad = {'ab', 'cd', 'pq', 'xy'}
 
     for b in bad:
         if b in s:
@@ -18,8 +18,8 @@ def nice(s):
     if vows < 3:
         return False
 
-    for i in xrange(97,123,1):
-        if chr(i) + chr(i) in s:
+    for i in range(97,123,1):
+        if chr(i)*2 in s:
             return True
             
     return False
@@ -30,5 +30,5 @@ def part1(s):
 
 if __name__ == '__main__':
     s = [line.strip() for line in fileinput.input()]
-    print "Part 1: ", part1(s)
+    print("Part 1:", part1(s))
     #print "Part 2: ", part2(s)
