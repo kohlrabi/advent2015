@@ -6,11 +6,14 @@ import re
 
 def nice(s):
 
-    re_bad = re.compile(r'ab|cd|pq|xy').findall
-    re_vowels = re.compile(r'(.*[aeiou].*){3,}').findall
-    re_double = re.compile(r'(.)\1{1,}').findall
-
-    if not re_bad(s) and re_vowels(s) and re_double(s):
+    re_bad = re.findall(r'ab|cd|pq|xy', s)
+    if re_bad:
+        return False
+    re_vowels = re.findall(r'(.*[aeiou].*){3,}', s)
+    if not re_vowels:
+        return False
+    re_double = re.findall(r'(.)\1{1,}', s)
+    if re_double:
         return True
     return False
 
