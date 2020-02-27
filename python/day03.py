@@ -7,25 +7,22 @@ def move(c):
     return d[c]
 
 def houses(s):
-    h = [0 + 0j]
+    last = 0 + 0j
     u = {0 + 0j}
     for ss in s:
-        new = h[-1] + move(ss)
-        h.append(new)
-        u.add(new)
-    return h, u
+        last += move(ss)
+        u.add(last)
+    return u
 
 def part1(s):
-    h, u = houses(s)
+    u = houses(s)
     return len(u)
 
 def part2(s):
-    h, u = houses(s[0::2])
-    h2, u2 = houses(s[1::2])
-    for uu in u2:
-        if not uu in u:
-            u.add(uu)
-    return len(u)
+    u = houses(s[0::2])
+    u2 = houses(s[1::2])
+    un = u.union(u2)
+    return len(un)
 
 if __name__ == '__main__':
     s = [line.strip() for line in fileinput.input()][0]
