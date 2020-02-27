@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
 import fileinput
-import hashlib
-import math
 
 def nice(s):
     vowels = 'aeiou'
