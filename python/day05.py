@@ -7,8 +7,8 @@ import re
 def nice(s):
 
     re_bad = re.compile(r'ab|cd|pq|xy').findall
-    re_vowels = re.compile(r'(.*[aeiou].*){3}').findall
-    re_double = re.compile(r'(.)\1{1}').findall
+    re_vowels = re.compile(r'(.*[aeiou].*){3,}').findall
+    re_double = re.compile(r'(.)\1{1,}').findall
 
     if not re_bad(s) and re_vowels(s) and re_double(s):
         return True
