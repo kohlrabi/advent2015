@@ -48,5 +48,5 @@ def parse(line):
 
 if __name__ == '__main__':
     s = [parse(line) for line in fileinput.input()]
-    print("Part 1: ", part1(s))
-    print("Part 2: ", part2(s))
+    print("Part 1:", part1(s))
+    print("Part 2:", part2(s))
