@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import fileinput
 
@@ -23,5 +23,5 @@ def part2(s):
 
 if __name__ == '__main__':
     s = [line for line in fileinput.input()][0]
-    print "Part 1: ", part1(s)
-    print "Part 2: ", part2(s)
+    print("Part 1:", part1(s))
+    print("Part 2:", part2(s))
