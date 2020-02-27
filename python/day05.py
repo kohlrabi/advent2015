@@ -28,13 +28,13 @@ def nice2(s):
 
 
 def part1(s):
-    ni = [True for l in s if nice(l)]
-    return len(ni)
+    ni = sum(1 for l in s if nice(l))
+    return ni
 
 
 def part2(s):
-    ni = [True for l in s if nice2(l)]
-    return len(ni)
+    ni = sum(1 for l in s if nice2(l))
+    return ni
 
 
 if __name__ == '__main__':
